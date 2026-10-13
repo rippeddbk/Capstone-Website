@@ -1,0 +1,40 @@
+* { box-sizing: border-box; }
+:root {
+  --bg: #e8d8d0;
+  --brown: #4a241e;
+  --brown-2: #71372b;
+  --red: #b82f32;
+  --red-light: #e05b54;
+  --cream: #fff7f0;
+  --text: #321a17;
+}
+body { margin: 0; font-family: Arial, sans-serif; background: var(--bg); color: var(--text); }
+.taskbar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 12px 20px; background: var(--brown); border-bottom: 4px solid var(--red); color: var(--cream);
+}
+.brand { font-weight: bold; letter-spacing: .4px; }
+.taskbar nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.taskbar a {
+  display: inline-block; padding: 8px 12px; color: var(--cream);
+  background: var(--brown-2); text-decoration: none; border-radius: 4px; font-size: 14px;
+}
+.taskbar a:hover, .taskbar a:focus { background: var(--red); }
+main { max-width: 850px; margin: 28px auto; padding: 0 16px; }
+h1 { font-size: 22px; font-weight: normal; color: var(--brown); }
+.panel { background: var(--brown); padding: 18px; border-radius: 3px; }
+.white { background: var(--cream); padding: 20px; min-height: 130px; border-radius: 2px; }
+.hero { text-align: center; padding: 35px 20px; }
+.placeholder { width: 110px; height: 80px; margin: 0 auto 18px; background: var(--red-light); color: var(--brown); display: grid; place-items: center; font-size: 36px; }
+.button { display: inline-block; border: 0; background: var(--red); color: white; padding: 10px 22px; margin: 6px; border-radius: 3px; text-decoration: none; cursor: pointer; font: inherit; }
+.button:hover, .button:focus { background: var(--brown-2); }
+.field { display: block; width: min(100%, 320px); padding: 12px; margin: 12px auto; border: 1px solid #bd8d80; border-radius: 3px; background: white; color: var(--text); }
+.dashboard-top { display: flex; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.dashboard-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 14px; }
+.small-box { min-height: 100px; }
+.map-box { min-height: 240px; display: grid; place-items: center; text-align: center; }
+.muted { color: #79554b; font-size: 14px; }
+@media (max-width: 600px) {
+  .taskbar { align-items: flex-start; flex-direction: column; }
+  .dashboard-top, .dashboard-grid { display: grid; grid-template-columns: 1fr; }
+}
